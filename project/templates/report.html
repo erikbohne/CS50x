@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Report an issue
+{% endblock %}
+
+{% block main %}
+
+    <form action="/report" method="post">
+        <div class="form-group">
+            <select id="bike" name="bike" class="form-select form-control">
+                <option disabled selected>Choose bike</option>
+                <option value="0">Bike 1</option>
+                <option value="1">Bike 2</option>
+                <option value="2">Bike 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" id="text" rows="3" name="message" placeholder="Describe issue"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Report issue</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: Because it was a big differense between sorting the already sorted list and the random list, ergo it has a different O and Omega
+
+sort2 uses: merged sort
+
+How do you know?: It takes about the same time wheter the list is already sorted or not, and it takes very little time compared to sort3
+
+sort3 uses: selection sort
+
+How do you know?: It takes about the same time wheter the list is already sorted or not, and it takes more time compared to sort 1

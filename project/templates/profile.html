@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+
+    <form action="/" method="post">
+
+        <h1>Your active bookings</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Bike</th>
+                    <th>Booked date</th>
+                    <th>Date booked</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in range(n) %}
+                    <tr>
+                        <td>{{ booking[i]["bike"] }}</td>
+                        <td>{{ booking[i]["rent"] }}</td>
+                        <td>{{ booking[i]["book"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        <br>
+        <br>
+        <nav class="history">
+            <table class="table table-striped history">
+                <thead>
+                    <tr>
+                        <th>Bike</th>
+                        <th>Booked date</th>
+                        <th>Date booked</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(m) %}
+                        <tr>
+                            <td>{{ history[i]["bike"] }}</td>
+                            <td>{{ history[i]["rent"] }} week {{ history[i]["week"] }}</td>
+                            <td>{{ history[i]["book"] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </nav>
+        {% if o > 0 %}
+            <table class="table table-striped stats">
+                <thead>
+                    <tr>
+                        <th>Bike</th>
+                        <th>Number of bookings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for i in range(o) %}
+                    <tr>
+                        <td>{{ stats[i]["bike"] }}</td>
+                        <td>{{ stats[i]["num"] }}</td>
+                    </tr>
+                {% endfor %}
+                    <tr>
+                        <td>TOTAL/td>
+                        <td>{{ total }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        {% endif %}
+        {% if p > 0 %}
+            <table class="table table-striped stats">
+                <thead>
+                    <tr>
+                        <th>Number of bookings</th>
+                        <th>Day</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for i in range(p) %}
+                    <tr>
+                        <td>{{ weekday[i]["num"] }}</td>
+                        <td>{{ weekday[i]["weekday"] }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+
+
+
+
+    </form>
+    <br>
+    <form action="/changepass" method="get">
+        <input class="btn btn-primary" type="submit" value="Change Password">
+    </form>
+
+{% endblock %}

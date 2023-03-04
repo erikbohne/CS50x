@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Confirmation
+{% endblock %}
+
+{% block main %}
+
+    <form action="/book" method="post">
+        <div class="form-control">
+            <p>Do you want to confirm the booking of bike {{ bike }}, {{ day }} {{ date.month }}/{{ date.day }}?</p>
+            <tr>
+                <td>
+                    <input class="btn btn-primary red" type="submit" value="Cancel" name="cancel"></td>
+                <td>
+                    <input type="hidden" name="bike" value="{{ bike }}">
+                    <input type="hidden" name="weekday" value="{{ date.weekday }}">
+                    <input type="hidden" name="day" value="{{ date.day }}">
+                    <input type="hidden" name="week" value="{{ date.week }}">
+                    <input type="hidden" name="month" value="{{ date.month }}">
+                    <input type="hidden" name="year" value="{{ date.year }}">
+                    <input class="btn btn-primary green" type="submit" value="Confirm" name="confirm">
+                </td>
+            </tr>
+        </div>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin
+{% endblock %}
+
+{% block main %}
+
+    <form action="/admin" method="post">
+        <h1>Status</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Bike 1</th>
+                    <th>Bike 2</th>
+                    <th>Bike 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for i in range(3) %}
+                        {% if status[i]["status"] == 0 %}
+                            <td>Active</td>
+                        {% else %}
+                            <td>Not Active</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {% for i in range(3) %}
+                        {% if status[i]["status"] != 0 %}
+                            <td><input class="btn btn-primary green" type="submit" value="Aktiver" name="bike{{ status[i]["bikeID"] }}"></td>
+                        {% else %}
+                            <td><input class="btn btn-primary red" type="submit" value="Deaktiver" name="bike{{ status[i]["bikeID"] }}"></td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <form action="/admin" method="post">
+        <h1>Report history</h1>
+        <table class="table table-striped history">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Bike</th>
+                    <th>Problem</th>
+                    <th>Reported by</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in range(m) %}
+                    <tr>
+                        <td>{{ active[i]["date"] }}</td>
+                        <td>{{ active[i]["bikeID"] }}</td>
+                        <td>{{ active[i]["message"] }}</td>
+                        <td><a href="mailto:{{ active[i]["mail"] }}">{{ active[i]["firstname"] }} {{ active[i]["surname"] }}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+
+    <h1>All bookings</h1>
+    <nav class="history">
+        <table class="table table-striped history">
+            <thead>
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Name</th>
+                    <th>Booked date</th>
+                    <th>Bike</th>
+                    <th>Email</th>
+                    <th>Booked</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in range(n) %}
+                    <tr>
+                        <td>{{ booking[i]["bookingID"] }}</td>
+                        <td>{{ booking[i]["firstname"] }} {{ booking[i]["surname"] }}</td>
+                        <td>{{ booking[i]["day"] }} uke {{ booking[i]["week"] }}</td>
+                        <td>{{ booking[i]["bikeID"] }}</td>
+                        <td><a href="mailto:{{ booking[i]["mail"] }}">{{ booking[i]["mail"] }}</a></td>
+                        <td>{{ booking[i]["date"] }} {{ booking[i]["time"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </nav>
+
+{% endblock %}

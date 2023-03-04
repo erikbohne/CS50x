@@ -1,0 +1,128 @@
+body {
+    background-color: #fff;
+    font-size: 1rem;
+}
+
+.headline {
+    background-image: url('images/headline.jpg');
+    color: #FFF;
+    font-size: 6rem;
+    font-weight: bold;
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+.headbar {
+    background-color: #aba;
+    color: #000;
+    font-size: 2rem;
+    padding: 0.5rem 5rem 0.5rem 5rem;
+    text-align: center;
+}
+
+.menu_link {
+    color: #FFF;
+    padding: 0.5rem 5rem 0.5rem 5rem;
+}
+
+.menu_link:hover {
+    color: #FFF;
+}
+
+.video_list {
+    text-align: center;
+}
+
+.video {
+    margin-bottom: 3rem;
+}
+
+hr {
+    margin-bottom: 3rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+picture_background {
+    background-image: url('sykkelbilde.bmp');
+}
+
+#mega_vibe {
+    align-content: space-between;
+    margin-left: 5rem;
+}
+
+#flammer {
+    align-content: space-between;
+    margin-right: 5rem;
+}
+
+address {
+    margin-left: 10rem;
+    margin-bottom: 3rem;
+}
+
+.biography {
+    margin-left: 5rem;
+    margin-bottom: 3rem;
+}
+
+.playlists {
+    text-align: center;
+}
+
+.front-page {
+    text-align: center;
+    background-image: url('images/6.jpg');
+}
+
+footer {
+    background-color: #aba;
+}
+
+.margin-3 {
+    margin: 3rem;
+}
+
+.img-bio {
+    background-image: url('images/3.jpg');
+}
+
+.boxes {
+    padding: 0.5rem 2rem 1rem 2rem;
+}
+
+.smiley {
+    text-align: left;
+    color: #aaa;
+}
+
+.image {
+    height: 40rem;
+}
+
+.btn {
+    background-color: #aba;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #cdc;
+    text-decoration: underline;
+    transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+h1 {
+    color: white;
+    font-weight: bolder;
+    text-shadow: 2px 2px #000;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+.size-m {
+    height: 30rem;
+}
+

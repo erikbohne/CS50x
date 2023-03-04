@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+        // Load the content of the DOM and rund the anonymous function with the eventlistners
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // First select the correct answer query and add the click-event action
+            let correct = document.querySelector('.correct');
+            correct.addEventListener('click', function() {
+                correct.style.backgroundColor = 'green';
+                document.querySelector('#response1').innerHTML = 'Correct!';
+            });
+
+            // First select all the incorrect answers and add a for loop to iderate over all the incorrect ansers
+            // where each will become red when clicked and respond with "Incorrect!"
+            let incorrects = document.querySelectorAll('.incorrect');
+            for (let i = 0; i < incorrects.length; i++) {
+                incorrects[i].addEventListener('click', function() {
+                   incorrects[i].style.backgroundColor = 'red';
+                   document.querySelector('#response1').innerHTML = "Incorrect!";
+                });
+            }
+
+            // First add eventlistener to the click button and then check to see if the value in the input bar (input.value)
+            // matches the correct answer, if so turn green and add "correct!", if not, turn red and say "incorrect!"
+            document.getElementById('check').addEventListener('click', function() {
+                let answer = document.querySelector('input')
+                if (answer.value == 'Italy') {
+                    answer.style.backgroundColor = 'green';
+                    document.querySelector('#response2').innerHTML = 'Correct!';
+                }
+                else {
+                    answer.style.backgroundColor = 'red';
+                    document.querySelector('#response2').innerHTML = 'Inorrect!';
+                }
+            });
+        });
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <h3>Who won the 2021 edition of le Tour de France?</h3>
+
+                <button class="incorrect">Primoz Roglic</button>
+                <button class="incorrect">Jonas Vingegaard</button>
+                <button class="correct">Tadej Pogacar</button>
+                <button class="incorrect">Richard Carapaz</button>
+                <button class="incorrect">Mark Cavendish</button>
+
+                <p id="response1"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <h3>Which country won the UEFA 2020 European Championship?</h3>
+
+                <input placeholder="Answer here" type="text">
+                <button id="check">Check answer</button>
+
+                <p id="response2"></p>
+
+            </div>
+
+        </div>
+    </body>
+</html>

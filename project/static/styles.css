@@ -1,0 +1,98 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+}
+
+.green
+{
+    background-color: #008000;
+    border-color: #008000;
+}
+
+.green:hover
+{
+    background-color: darkgreen;
+    border-color: darkgreen;
+}
+
+.red
+{
+    background-color: #BB0000;
+    border-color: #BB0000;
+}
+
+.red:hover
+{
+    background-color: darkred;
+    border-color: darkred;
+}
+
+input:diabled,
+input[disabled]
+{
+    background-color: red;
+}
+
+.btn-disabled
+{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: #fff;
+    background-color: #BB0000;
+    border-color: #BB0000;
+}
+
+.history
+{
+    height: 20rem;
+    width: 100%;
+    overflow:hidden;
+    overflow-y:scroll;
+}
+
+.center
+{
+    text-align: center;
+}
+
+.stats
+{
+    width: 40%;
+}
+
+.img
+{
+    width: 3%;
+    height: 3%;
+}

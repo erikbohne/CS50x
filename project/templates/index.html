@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bike Booking
+{% endblock %}
+
+{% block main %}
+
+    <form action="/confirmation" method="post">
+        <h1>Booking for week {{ week }}</h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Bike 1 (Large)</th>
+                    <th>Bike 2 (Medium)</th>
+                    <th>bike 3 (Medium)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in range(5) %}
+                    <tr>
+                        {% if available[0][i] or status[0]["status"] == 1 %}
+                        <td><input class="btn-disabled" type="submit" value="{{ day[i] }}" name="bike1" disabled></input></td>
+                        {% else %}
+                        <td><input class="btn btn-primary green" type="submit" value="{{ day[i] }}" name="bike1"></input></td>
+                        {% endif %}
+                        {% if available[1][i] or status[1]["status"] == 1 %}
+                        <td><input class="btn-disabled" type="submit" value="{{ day[i] }}" name="bike2" disabled></input></td>
+                        {% else %}
+                        <td><input class="btn btn-primary green" type="submit" value="{{ day[i] }}" name="bike2"></input></td>
+                        {% endif %}
+                        {% if available[2][i] or status[2]["status"] == 1 %}
+                        <td><input class="btn-disabled" type="submit" value="{{ day[i] }}" name="bike3" disabled></input></td>
+                        {% else %}
+                        <td><input class="btn btn-primary green" type="submit" value="{{ day[i] }}" name="bike3"></input></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+
+{% endblock %}
